@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
                             ingredients: params[:ingredients],
                             directions: params[:directions])
 
-    # render 'show.html.erb'
+    flash[:success] = "New Recipe Created"
     redirect_to "/recipes/#{@recipe.id}"
   end
 
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
                    ingredients: params[:ingredients],
                    directions: params[:directions])
 
-    # render 'show.html.erb'
+    flash[:success] = "Recipe Updated"
     redirect_to "/recipes/#{@recipe.id}"
   end
 
@@ -42,6 +42,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
+    flash[:warning] = "And.... It's Gone."
     redirect_to '/recipes'
   end
 end
