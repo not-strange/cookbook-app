@@ -1,10 +1,25 @@
 
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="col-md-4">
+      <div class="well thumbnail index-list">
+        <h2><%= link_to recipe.title, "/recipes/#{recipe.id}" %></h2>
+        <h3>By: <%= recipe.chef %></h3>
+        <h5>Time: <%= recipe.prep_time %></h5>
+        <a href="/recipes/<%= recipe.id %>">
+          <img src="<%= recipe.image %>" alt="<%= recipe.title %>">
+        </a>
+        <h3>Ingredients: <%= recipe.ingredients %></h3>
+        <h3>Direction: <%= recipe.directions %></h3>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<% @recipes.each do |recipe| %>
-  <h2><%= link_to recipe.title, "/recipes/#{recipe.id}" %></h2>
-  <h3>By: <%= recipe.chef %></h3>
-  <h5>Time: <%= recipe.prep_time %></h5>
-  <h3>Ingredients: <%= recipe.ingredients %></h3>
-  <h3>Direction: <%= recipe.directions %></h3>
-  <br>
-<% end %>
+<!-- <div class="row">
+
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+
+</div> -->
