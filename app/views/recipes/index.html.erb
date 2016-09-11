@@ -7,7 +7,7 @@
             <h2><%= link_to recipe.title, "/recipes/#{recipe.id}" %></h2>
             <h6>Updated On: <%= recipe.friendly_updated_at %></h6>
             <h3>By: <%= recipe.chef %></h3>
-            <h5>Time: <%= recipe.friendly_prep_time %></h5>
+            <h3>Time: <%= recipe.friendly_prep_time %></h3>
             <a href="/recipes/<%= recipe.id %>">
               <img src="<%= recipe.image %>" alt="<%= recipe.title %>">
             </a>
